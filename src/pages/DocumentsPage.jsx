@@ -1,0 +1,3 @@
+import PageHeader from '../components/PageHeader';
+import { documents } from '../data/portalData';
+export default function DocumentsPage() { return <><PageHeader title="Documents" description="Clinical, insurance, and cost documents associated with your episode." /><section className="panel"><div className="document-list">{documents.map(doc => <div className="document-row" key={doc.id}><span className="document-icon">▤</span><span><strong>{doc.name}</strong><small>{doc.type} · {doc.date}</small></span><button type="button" className="secondary-button">Preview</button></div>)}</div></section></>; }

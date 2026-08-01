@@ -1,0 +1,3 @@
+import PageHeader from '../components/PageHeader';
+import { messages } from '../data/portalData';
+export default function MessagesPage() { return <><PageHeader title="Messages" description="Updates from your care and billing teams." actions={<button className="primary-button" type="button">New message</button>} /><section className="panel message-list">{messages.map(message => <article key={message.id} className={message.unread ? 'message unread' : 'message'}><div className="message-marker"/><div><div className="message-heading"><h2>{message.subject}</h2><time>{message.date}</time></div><p>{message.body}</p><button type="button" className="text-button">Open message</button></div></article>)}</section></>; }
